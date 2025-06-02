@@ -1,22 +1,31 @@
 from flask import render_template, request, redirect, url_for
-from .models import Paladin, Pacient
+from models import Paladin, Pacient, Doctor
 
 system = Paladin()
 
-doc1 = system.add_doctor(Pacient(1, "Іван Іванов", "ivan@clinic.com"))
-system.add_doctor(Pacient(2, "Олена Петрова", "olena@clinic.com"))
-system.add_doctor(Pacient(3, "Сергій Сидоров", "sergiy@clinic.com"))
-system.add_doctor(Pacient(4, "Наталія Коваленко", "nataliya@clinic.com"))
-system.add_doctor(Pacient(5, "Олександр Мельник", "oleksandr@clinic.com"))
-system.add_doctor(Pacient(6, "Вікторія Савченко", "viktoriya@clinic.com"))
-system.add_doctor(Pacient(7, "Михайло Бондаренко", "mykhailo@clinic.com"))
+doc1 = Doctor(1, "Іван Іванов", "ivan@clinic.com", "Терапевт")
+doc2 = Doctor(2, "Олена Петрова", "olena@clinic.com", "Кардіолог")
+doc3 = Doctor(3, "Сергій Сидоров", "sergiy@clinic.com", "Хірург")
+doc4 = Doctor(4, "Наталія Коваленко", "nataliya@clinic.com", "Педіатр")
+doc5 = Doctor(5, "Олександр Мельник", "oleksandr@clinic.com", "Невролог")
+doc6 = Doctor(6, "Вікторія Савченко", "viktoriya@clinic.com", "Офтальмолог")
+doc7 = Doctor(7, "Михайло Бондаренко", "mykhailo@clinic.com", "Ортопед")
 
+for doc in [doc1, doc2, doc3, doc4, doc5, doc6, doc7]:
+    system.add_doctor(doc)
+
+pat1 = Pacient(1, "Марія Петренко", "maria@gmail.com")
+system.add_pacient(pat1)
+
+from models import Doctor 
 
 def index():
     return render_template('index.html')
 
+
 def doctors():
     return render_template('doctors.html', doctors=system.doctors)
+
 
 def register(doctor_id):
     doctor = system.get_doctor_by_id(doctor_id)
@@ -29,11 +38,16 @@ def register(doctor_id):
         new_patient = Pacient(len(system.pacients) + 1, patient_name, patient_email)
         system.add_pacient(new_patient)
 
-        new_patient.make_appointment(doctor, appointment_time, system)
+        registration = new_patient.make_appointment(
+            doctor,
+            appointment_time,
+            system
+        )
 
         return redirect(url_for('appointments'))
 
     return render_template('register.html', doctor=doctor)
+
 
 def appointments():
     return render_template('appointments.html', appointments=system.registers)
