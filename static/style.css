@@ -1,0 +1,130 @@
+/* Основний фон білий */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Шапка біла з рожевим текстом */
+header {
+    background: white;
+    color: #ff6b88; /* Рожевий колір тексту */
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(255, 105, 136, 0.1);
+    border-bottom: 2px solid #ffe6ee;
+}
+
+/* Логотип/назва */
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #ff6b88; /* Рожевий */
+}
+
+/* Навігація */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: white;
+    margin: 1rem 0 0;
+    padding: 0.8rem 0;
+}
+
+nav li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: #ff6b88; /* Рожевий */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background-color: #fff5f7; /* Дуже світлий рожевий */
+}
+
+/* Основний вміст */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+}
+
+/* Підвал */
+footer {
+    background: white;
+    color: #ff6b88; /* Рожевий */
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 2px solid #ffe6ee;
+}
+
+/* Рожеві кнопки */
+.button {
+    background: #ff6b88;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* Картки лікарів */
+.doctor-card {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(255, 105, 136, 0.1);
+    border: 1px solid #ffe6ee;
+}
+
+/* Форми */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ff6b88; /* Рожевий */
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ffe6ee;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    border-color: #ff6b88;
+    outline: none;
+}
+
+/* Заголовки */
+h2, h3 {
+    color: #ff6b88; /* Рожевий */
+}
+
+h2 {
+    border-bottom: 2px solid #ffe6ee;
+    padding-bottom: 0.5rem;
+}
