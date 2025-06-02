@@ -40,22 +40,6 @@
 
 http://localhost:5000
 
-📂 ****Структура проекту****
-
-CLINIC/
-├── static/          # CSS та JS файли
-│   └── style.css
-├── templates/       # HTML шаблони
-│   ├── base.html    # Базовий шаблон
-│   ├── index.html   # Головна сторінка
-│   ├── doctors.html # Список лікарів
-│   ├── register.html# Форма запису
-│   └── appointments.html # Записи
-├── app.py          # Основний файл додатку
-├── models.py       # Моделі бази даних
-├── routes.py       # Маршрути Flask
-└── __init__.py     # Ініціалізація пакету
-
 ⚠️ **Поширені проблеми**
 Проблема: Команди python не працюють
 Рішення: Спробуйте py замість python:
