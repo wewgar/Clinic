@@ -32,3 +32,12 @@ class Doctor(User):
 
     def __str__(self):
         return f"Dr. {self.name}, {self.specialty}"
+
+class Register:
+    def __init__(self, pacient, doctor, time):
+        self.pacient = pacient
+        self.doctor = doctor
+        self.time = time
+
+    def __str__(self):
+        return f"{self.time} - {self.pacient.name} у {self.doctor.name}"
