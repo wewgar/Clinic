@@ -1,7 +1,5 @@
-
-
-from .models import Paladin, Doctor, Pacient, Register
-from .views import index, doctors, register, appointments
+from models import Paladin, Doctor, Pacient, Register
+from routes import index, doctors, register, appointments
 
 system = Paladin()
 
