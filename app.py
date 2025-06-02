@@ -23,3 +23,12 @@ class Pacient(User):
         self.registrations.append(registration)
         doctor.register.append(registration)
         return registration
+
+class Doctor(User):
+    def __init__(self, user_id, name, email, specialty):
+        super().__init__(user_id, name, email)
+        self.specialty = specialty
+        self.register = []
+
+    def __str__(self):
+        return f"Dr. {self.name}, {self.specialty}"
