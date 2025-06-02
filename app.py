@@ -84,3 +84,44 @@ system.add_doctor(doc7)
 
 pat1 = Pacient(1, "Марія Петренко", "maria@gmail.com")
 system.add_pacient(pat1)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/doctors')
+def doctors():
+    return render_template('doctors.html', doctors=system.doctors)
+
+
+@app.route('/register/<int:doctor_id>', methods=['GET', 'POST'])
+def register(doctor_id):
+    doctor = system.get_doctor_by_id(doctor_id)
+
+    if request.method == 'POST':
+        patient_name = request.form.get('name')
+        patient_email = request.form.get('email')
+        appointment_time = request.form.get('time')
+
+        new_patient = Pacient(len(system.pacients) + 1, patient_name, patient_email)
+        system.add_pacient(new_patient)
+
+        registration = new_patient.make_appointment(
+            doctor,
+            appointment_time,
+            system
+        )
+
+        return redirect(url_for('appointments'))
+
+    return render_template('register.html', doctor=doctor)
+
+
+@app.route('/appointments')
+def appointments(): 
+    return render_template('appointments.html', appointments=system.registers)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
