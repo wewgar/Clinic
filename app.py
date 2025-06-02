@@ -65,3 +65,22 @@ class Paladin:
 
 
 system = Paladin()
+
+doc1 = Doctor(1, "Іван Іванов", "ivan@clinic.com", "Терапевт")
+doc2 = Doctor(2, "Олена Петрова", "olena@clinic.com", "Кардіолог")
+doc3 = Doctor(3, "Сергій Сидоров", "sergiy@clinic.com", "Хірург")
+doc4 = Doctor(4, "Наталія Коваленко", "nataliya@clinic.com", "Педіатр")
+doc5 = Doctor(5, "Олександр Мельник", "oleksandr@clinic.com", "Невролог")
+doc6 = Doctor(6, "Вікторія Савченко", "viktoriya@clinic.com", "Офтальмолог")
+doc7 = Doctor(7, "Михайло Бондаренко", "mykhailo@clinic.com", "Ортопед")
+
+system.add_doctor(doc1)
+system.add_doctor(doc2)
+system.add_doctor(doc3)
+system.add_doctor(doc4)
+system.add_doctor(doc5)
+system.add_doctor(doc6)
+system.add_doctor(doc7)
+
+pat1 = Pacient(1, "Марія Петренко", "maria@gmail.com")
+system.add_pacient(pat1)
