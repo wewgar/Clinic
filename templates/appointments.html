@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Ваші записи</h2>
+    
+    {% if appointments %}
+        <ul class="appointments-list">
+            {% for appointment in appointments %}
+                <li>
+                    <strong>{{ appointment.time }}</strong> - 
+                    {{ appointment.pacient.name }} записаний до 
+                    {{ appointment.doctor.name }} ({{ appointment.doctor.specialty }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У вас ще немає записів.</p>
+    {% endif %}
+{% endblock %}
