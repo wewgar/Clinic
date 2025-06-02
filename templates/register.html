@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Запис до {{ doctor.name }}</h2>
+    <p>Спеціальність: {{ doctor.specialty }}</p>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Ваше ім'я:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="time">Дата та час:</label>
+            <input type="datetime-local" id="time" name="time" required>
+        </div>
+        
+        <button type="submit" class="button">Підтвердити запис</button>
+    </form>
+{% endblock %}
