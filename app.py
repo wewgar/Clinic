@@ -11,3 +11,15 @@ class User:
 
     def __str__(self):
         return f"{self.name} ({self.email})"
+
+class Pacient(User):
+    def __init__(self, user_id, name, email):
+        super().__init__(user_id, name, email)
+        self.registrations = []
+
+    def make_appointment(self, doctor, time, system):
+        registration = Register(self, doctor, time)
+        system.add_register(registration)
+        self.registrations.append(registration)
+        doctor.register.append(registration)
+        return registration
