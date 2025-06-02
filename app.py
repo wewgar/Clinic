@@ -41,3 +41,27 @@ class Register:
 
     def __str__(self):
         return f"{self.time} - {self.pacient.name} у {self.doctor.name}"
+
+class Paladin:
+    def __init__(self):
+        self.pacients = []
+        self.doctors = []
+        self.registers = []
+
+    def add_pacient(self, pacient):
+        self.pacients.append(pacient)
+
+    def add_doctor(self, doctor):
+        self.doctors.append(doctor)
+
+    def add_register(self, register):
+        self.registers.append(register)
+
+    def get_doctor_by_id(self, doctor_id):
+        for doctor in self.doctors:
+            if doctor.user_id == int(doctor_id):
+                return doctor
+        return None
+
+
+system = Paladin()
